@@ -2,11 +2,13 @@ import express, { Request, Response } from 'express';
 import menuRouter from './routes/menuRoutes';
 import entidadeRouter from './routes/entidadeRoutes';
 import dynamicRoutes from './routes/dynamicRoutes';
+const cors = require("cors");
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // Rotas
